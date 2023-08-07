@@ -4,9 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Basic</title>
+    <style>
+        .congress {color: teal; background-color: beige;}
+    </style>
 </head>
-<!-- alt + shift + a (comment) -->
 <body>
+    <!-- Comments alt + shift + a -->
     <!-- Headings  -->
     <h1>h1 tag</h1>
     <h2>h2 tag</h2>
@@ -16,13 +19,18 @@
     <h6>h6 tag</h6>
 
     <!-- Paragraphs -->
-    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+    <p><span title="simply dummy">Ipsum</span> is simply dummy <span style="color: tomato">text of the printing</span> and <span class="congress">typesetting industry.</span> Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
 
     <!-- link -->
     <a href="https://www.w3schools.com/" target="_blank">Visit w3schools!</a>
 
     <!-- Image -->
     <img src="https://picsum.photos/200/300" alt="An alternate text for an image" width="400" height="600" >
+    
+    <!-- Three way to add CSS
+    Inline - by using the style attribute inside HTML elements.
 
+    Internal - by using a <style> element in the <head> section.
+    External - by using a <link> element to link to an external CSS file. -->
 </body>
 </html>

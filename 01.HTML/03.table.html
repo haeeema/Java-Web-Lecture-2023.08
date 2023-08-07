@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table</title>
+    <style>
+        th { padding: 5px; }
+        td { text-align: center; padding: 5px; }
+        .title {color: tomato;}
+    </style>
+</head>
+<body style="margin-left: 50px;">
+    <table border="1">
+        <thead>
+            <tr class="title"><!--table row-->
+                <th>No</th>
+                <th>Title</th>
+                <th>Details</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>JAVA</td>
+                <td>Object Orientied Programing Language</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>HTML</td>
+                <td>Hyper Text Markup Language</td>
+            </tr>
+            <tr>
+                <td rowspan="2">3</td>
+                <td rowspan="2">Dynamic Web</td>
+                <td>Java Script</td>
+            </tr>
+            <tr>
+                <td>JQuery</td>
+            </tr>
+            <tr>
+                <td colspan="3">Merge multiple columns into one.</td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+    <h1>Input form</h1>
+    <h3>Log-in</h3>
+    <form action="/user/login" method="post">
+        ID : <input type="text" name="uid"><br>
+        password : <input type="password" name="pwd"><br>
+        <input type="submit" value="enter">
+        <input type="reset" value="cancel">
+    </form>
+    <br>
+    <h3>Log-in with Table</h3>
+    <form action="/user/login" method="post">
+        <table>
+            <tr>
+                <td style="text-align: left;">ID :</td>
+                <td><input type="text" name="uid"></td>
+            </tr>
+            <tr>
+                <td style="text-align: left;">password :</td>
+                <td><input type="password" name="pwd"></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="submit" value="enter">
+                    <input type="reset" value="cancel">
+                </td>
+            </tr>
+        </table>
+    </form>
+
+</body>
+</html>
