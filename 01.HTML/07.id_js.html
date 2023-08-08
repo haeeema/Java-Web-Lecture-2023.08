@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ID ans JavaScript</title>
+    <script>
+        function dispString() {
+            document.getElementById("disp1").innerHTML = "You clicked!";
+        }
+        function background() {
+            document.getElementById("disp1").style.backgroundColor = "tomato";
+        }
+    </script>
+</head>
+<body>
+    <h1>My First JavaScript</h1>
+    <button onclick="dispString()">Click!</button>
+    <button onclick="background()">Background</button>
+    <div id="disp1"></div>
+</body>
+</html>
