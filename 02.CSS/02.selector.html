@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Selector</title>
+    <style>
+        #head { color: teal; text-align: center; }
+        .strong { font-size: 20px; font-weight: bold;}
+        p { color:tomato; background-color: tan;}
+        h1, p { margin: 20px; }
+        ul > li { color: brown;}    /*Child selector*/
+        div span {font-weight: bold; font-style: italic;}   /*Descendant selector*/
+    </style>
+</head>
+<body>
+    <h1 id="head">ID Selector part</h1>
+    <p>element(tag) selector part</p>
+    <p class="strong">Class selector part</p>
+    <ul>
+        <li>apple</li>
+        <li>melon</li>
+        <li>grape</li>
+    </ul>
+    <div>
+        <p>This is a <span>paragraph tag</span> in the div tag</p>
+        <span>span tag</span>
+    </div>
+</body>
+</html>
