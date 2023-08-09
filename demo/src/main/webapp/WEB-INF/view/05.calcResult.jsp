@@ -4,14 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Log-in result</title>
-</head>
+		<title>Calculator</title>
+	</head>
 	<body>
-		<h1>Result</h1>
+		<h3>Simple calculator</h3>
 		<hr>
-		<ul>
-			<li>uid: ${uid}</li>
-			<li>pwd: ${pwd}</li>
-		</ul>
+		${a} ${oper} ${b} = ${result}
 	</body>
 </html>
