@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InnerHTML</title>
+    <script>
+        function changeText() {
+            const header = document.getElementById("header");
+            const originalText = header.innerHTML;
+            header.innerHTML = "From JavaScript<br>";
+            header.innerHTML = `It was "${originalText}".`;
+        }
+        function excapeText() {
+            const header = document.getElementById("header");
+            header.innerHTML = "<i>i tag</i><br>";
+            header.innerHTML += "&lt;i&gt; tag &lt;i&gt;";
+        }
+    </script>
+</head>
+<body style="margin: 40px;">
+    <h1 id="header">Header 1</h1>
+    <button onclick="changeText()">Change text</button>
+    <button onclick="excapeText()">Escape text</button>
+</body>
+</html>

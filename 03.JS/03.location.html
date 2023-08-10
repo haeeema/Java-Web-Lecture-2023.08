@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Location/History object</title>
+    <script>
+        function delayedMove() {
+            setTimeout(function() {
+                location.href='https://www.google.com/';
+            }, 3000);
+        }
+    </script>
+</head>
+<body style="margin: 40px;">
+    <button onclick="location.href='https://www.google.com/'">Move to Google</button>
+    <button onclick="location.href='#/demo/calculator'">My Calculator</button>
+    <button onclick="delayedMove()">Delayed Move</button>
+    <button onclick="history.forward()">➡</button>
+    <button onclick="history.back()">Back</button>
+    <hr>
+    <h3 id="info"></h3>
+    <script>
+        let attr = `href: ${location.href}<br>`;
+        attr += `hostname: ${location.hostname}<br>`
+        attr += `port: ${location.port}<br>`
+        attr += `pathname: ${location.pathname}<br>`
+        document.getElementById("info").innerHTML = attr;
+        </script>
+</body>
+</html>
