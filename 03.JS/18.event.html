@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event</title>
+    <script>
+        function btn2click() {
+            alert("The button #2 is clicked");
+        }
+        window.onload = () => {
+            const btn3 = document.getElementById("btn3");
+            btn3.innerHTML = "button #3"
+            btn3.onclick = () => {
+                alert("The button #3 is clicked");
+            }
+            const btn4 = document.getElementById("btn4");
+            btn4.addEventListener("click", () => {
+                alert("The button #4 is clicked")
+            });
+            btn4.addEventListener("mouseover", () => {
+                const h3 = document.createElement("h3");
+                const textNode = document.createTextNode("The mouseover event occurs.");
+                h3.appendChild(textNode);
+                document.body.appendChild(h3);
+            });
+            btn4.addEventListener("mouseout", () => {
+                const h3 = document.querySelector("h3");
+                document.body.removeChild(h3);
+            })
+            const btn5 = document.getElementById("btn5");
+            btn5.addEventListener("mouseover", () => {
+                const img = document.createElement("img");
+                img.src = "#img/pokemon/000101.png";
+                document.body.appendChild(img);
+            })
+            btn5.addEventListener("mouseout", () => {
+                const img = document.querySelector("img");
+                document.body.removeChild(img);
+            })
+            const btn6 = document.getElementById("btn6");
+            btn6.onclick = () => {
+                alert("removed default event of a tag.");
+                const a = document.querySelector("a");
+                a.onclick = () => {
+                    return false;
+                    // remove default event.
+                }
+            }
+        }
+    </script>
+</head>
+<body style="margin: 40px;">
+    <button onclick="alert('The button #1 is clicked.')">button #1</button>
+    <button onclick="btn2click()">button #2</button>
+    <button id="btn3"></button>
+    <br><br>
+    <button id="btn4">button #4</button>
+    <button id="btn5">button #5</button>
+    <br><br>
+    <button id="btn6">button #6</button>
+    <a href="https://google.com">Google</a>
+</body>
+</html>
