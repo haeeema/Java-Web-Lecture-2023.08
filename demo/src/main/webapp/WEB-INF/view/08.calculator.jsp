@@ -20,7 +20,7 @@
                 <td class="result" colspan="4">${eval}</td>
             </tr>
             <tr>
-                <td><button type="submit" name="op" value="C">C</button></td>
+                <td><button type="submit" name="clr" value="C">C</button></td>
                 <td><button type="submit" name="op" value="/">÷</button></td>
                 <td><button type="submit" name="op" value="*">×</button></td>
                 <td><button type="submit" name="op" value="-">－</button></td>
@@ -40,7 +40,7 @@
                 <td><button type="submit" name="num" value="1">1</button></td>
                 <td><button type="submit" name="num" value="2">2</button></td>
                 <td><button type="submit" name="num" value="3">3</button></td>
-                <td rowspan="2"><button type="submit" name="op" value="=" style="height: 105px;">＝</button></td>
+                <td rowspan="2"><button type="submit" name="eql" value="=" style="height: 105px;">＝</button></td>
             </tr>
             <tr>
                 <td colspan="3"><button type="submit" name="num" value="0" style="width: 159px;">0</button></td>

@@ -111,6 +111,31 @@ public class DemoController {
 		
 		return "07.writeResult";
 	}
+	
+	@GetMapping("/calculator")
+	public String calculator() {
+		return "08.calculator";
+	}
+	
+	
+	String temp = "";
+	
+	@PostMapping("/calculator")
+	public String calculatorProc(HttpServletRequest req, Model model) {		
+		String op = req.getParameter("op");
+		String num = req.getParameter("num");
+		
+		if (op == null) {
+			temp += num;
+		} else {
+			temp += op;
+		}
+		
+		System.out.println(temp);
+		model.addAttribute("eval", temp);
+		
+		return "08.calculator";
+	}
 }
 
 
