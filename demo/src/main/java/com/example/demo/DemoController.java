@@ -118,21 +118,36 @@ public class DemoController {
 	}
 	
 	
-	String temp = "";
+	String numTemp = "";
+	String opTemp = "";
+	int memory = 0;
 	
 	@PostMapping("/calculator")
 	public String calculatorProc(HttpServletRequest req, Model model) {		
 		String op = req.getParameter("op");
 		String num = req.getParameter("num");
 		
-		if (op == null) {
-			temp += num;
-		} else {
-			temp += op;
+		if (memory == 0) {
+			if (op == null) { // number
+				numTemp += num;
+				memory = Integer.parseInt(numTemp);
+			} else if (num == null) { // operation
+				System.out.println("err");
+			}
+		} else if (memory != 0) {
+			if (op == null) { // number
+				numTemp += num;
+				if (opTemp == null) {
+					memory = Integer.parseInt(numTemp);					
+				}
+			} else if (num == null) { // operation
+				opTemp = op;
+				numTemp = "";
+			}
 		}
 		
-		System.out.println(temp);
-		model.addAttribute("eval", temp);
+		System.out.println(opTemp);
+		model.addAttribute("eval", numTemp);
 		
 		return "08.calculator";
 	}
