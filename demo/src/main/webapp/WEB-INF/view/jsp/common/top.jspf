@@ -9,7 +9,7 @@
                     <a class="nav-link" href="#"><i class="far fa-list-alt"></i> 게시판</a>
                 </li>
                 <li class="nav-item ms-3">
-                    <a class="nav-link" href="#"><i class="fas fa-user-friends"></i> 사용자</a>
+                    <a class="nav-link ${menu == 'sample' ? 'active' : '' }" href="#"><i class="fas fa-user-friends"></i> 사용자</a>
                 </li>
                 <li class="nav-item dropdown ms-3">
                     <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
@@ -24,7 +24,7 @@
                     </ul>
                 </li>
                 <li class="nav-item ms-3">
-                    <a class="nav-link active" href="#"><i class="fa-solid fa-calendar-days"></i> 스케쥴</a>
+                    <a class="nav-link ${menu == 'schedule' ? 'active' : '' }" href="#"><i class="fa-solid fa-calendar-days"></i> 스케쥴</a>
                 </li>
                 <li class="nav-item ms-3">
                     <a class="nav-link" href="#"><i class="fas fa-sign-out-alt"></i> 로그아웃</a>
