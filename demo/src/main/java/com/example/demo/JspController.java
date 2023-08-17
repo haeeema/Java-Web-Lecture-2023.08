@@ -5,12 +5,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-
-import jakarta.servlet.http.HttpSession;
 
 @Controller
 @RequestMapping("/jsp")
@@ -91,6 +91,30 @@ public class JspController {
 		model.addAttribute(list);
 		
 		return "jsp/el4_pojo";
+	}
+	
+	@GetMapping("/jstlCore")
+	public String jstlCore(Model model) {
+		Address addr1 = new Address(12345, "LA", "USA");
+		Address addr2 = new Address(67890, "NYC", "USA");
+		Member m1 = new Member(101, "James", addr1);
+		Member m2 = new Member(102, "Maria", addr2);	
+		Member m3 = new Member(103, "Hong", new Address(23456, "Seoul", "Korea"));
+		Member m4 = new Member(104, "kevin", new Address(13579, "Toronto", "Canade"));
+		
+		model.addAttribute("m1", m1);
+		model.addAttribute("m2", m2);
+		
+		Member[] members = {m1, m2};
+		model.addAttribute("memberArray", members);
+		
+		List<Member> list = new ArrayList<>();
+		list.add(m1);
+		list.add(m2);
+		list.add(m3);
+		model.addAttribute(list);
+		
+		return "jsp/jstl1_core";
 	}
 }
 

@@ -12,7 +12,7 @@
 	<h1>POJO(Plain Old Java Object)</h1>
 	<hr>
 	<table border="1">
-		<tr><td></td><td></td></tr>
+		<tr><td colspan="2"></td></tr>
 		<tr><td>\${m1}</td><td>${m1}</td></tr>
 		<tr><td>\${m1.id}</td><td>${m1.id}</td></tr>
 		<tr><td>\${m1.name}</td><td>${m1.name}</td></tr>
