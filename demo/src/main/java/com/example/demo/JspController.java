@@ -1,6 +1,10 @@
 package com.example.demo;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -100,7 +104,7 @@ public class JspController {
 		Member m1 = new Member(101, "James", addr1);
 		Member m2 = new Member(102, "Maria", addr2);	
 		Member m3 = new Member(103, "Hong", new Address(23456, "Seoul", "Korea"));
-		Member m4 = new Member(104, "kevin", new Address(13579, "Toronto", "Canade"));
+		Member m4 = new Member(104, "kevin", new Address(13579, "Toronto", "Canada"));
 		
 		model.addAttribute("m1", m1);
 		model.addAttribute("m2", m2);
@@ -115,6 +119,34 @@ public class JspController {
 		model.addAttribute(list);
 		
 		return "jsp/jstl1_core";
+	}
+	
+	@GetMapping("/jstlFmt")
+	public String jstlFmt(Model model) {
+		int price = 12345000;
+		Date now = new Date();
+		model.addAttribute("price", price);
+		model.addAttribute("now", now);
+		
+		LocalDate ldNow = LocalDate.now();
+		LocalTime ltNow = LocalTime.now();
+		LocalDateTime ldtNow = LocalDateTime.now();
+		model.addAttribute("ldNow", ldNow);
+		model.addAttribute("ltNow", ltNow);
+		model.addAttribute("ltNow2", ltNow.toString().substring(0, 8));
+		model.addAttribute("ldtNow", ldtNow);
+		model.addAttribute("ldtNow2", ldtNow.toString().replace("T", " ").substring(0, 19));
+		
+		return "jsp/jstl2_fmt";			
+	}
+	
+	@GetMapping("/jstlFn")
+	public String jstlFn(Model model) {
+		model.addAttribute("str1", "Hello world!");
+		model.addAttribute("str2", "Apache!");
+		model.addAttribute("str3", "Catalina!");
+		
+		return "jsp/jstl3_fn";
 	}
 }
 
