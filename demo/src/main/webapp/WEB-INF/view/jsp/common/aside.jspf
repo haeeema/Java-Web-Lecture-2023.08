@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%-- <body> 좌측에 있는 aside menu --%>
 
-			<div class="col-3">
+			<div>
                 <img src="https://picsum.photos/256/256" class="rounded-circle" width="90%">
                 <div class="mt-2">
                     오늘의 명언을 이 자리에 적습니다.

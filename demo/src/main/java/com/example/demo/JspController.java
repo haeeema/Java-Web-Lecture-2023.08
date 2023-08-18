@@ -24,6 +24,36 @@ public class JspController {
 	public String sample(HttpSession session, Model model) {
 		// model.addAttribute("menu", "sample");
 		session.setAttribute("menu", "sample");
+		
+		Address addr1 = new Address(12345, "LA", "USA");
+		Address addr2 = new Address(67890, "NYC", "USA");
+		Address addr3 = new Address(45335, "Seoul", "Korea");
+		Address addr4 = new Address(56462, "Seoul", "Korea");
+		Address addr5 = new Address(21455, "Paris", "France");
+		
+		Member m1 = new Member(101, "James", "james@gmail.com", addr1, "USA", "M");
+		Member m2 = new Member(102, "Maria", "maria@gmail.com", addr2, "USA", "F");	
+		Member m3 = new Member(103, "Hong", "hong@gmail.com", addr3, "Korea", "M");
+		Member m4 = new Member(104, "kevin", "kevin@gmail.com", addr4, "Korea", "M");
+		Member m5 = new Member(105, "Hamin", "hamin@gmail.com", addr5, "France", "M");
+		
+		model.addAttribute("m1", m1);
+		model.addAttribute("m2", m2);
+		model.addAttribute("m3", m3);
+		model.addAttribute("m4", m4);
+		model.addAttribute("m5", m5);
+		
+		Member[] members = {m1, m2, m3, m4, m5};
+		model.addAttribute("memberArray", members);
+		List<Member> list = new ArrayList<>();
+		
+		list.add(m1);
+		list.add(m2);
+		list.add(m3);
+		list.add(m4);
+		list.add(m5);
+		model.addAttribute(list);
+		
 		return "jsp/sample";
 	}
 	
@@ -80,8 +110,8 @@ public class JspController {
 	public String elPojo(Model model) {
 		Address addr1 = new Address(12345, "LA", "USA");
 		Address addr2 = new Address(67890, "NYC", "USA");
-		Member m1 = new Member(101, "James", addr1);
-		Member m2 = new Member(102, "Maria", addr2);		
+		Member m1 = new Member(101, "James", "james@gmail.com", addr1, "USA", "M");
+		Member m2 = new Member(102, "Maria", "maria@gmail.com", addr2, "USA", "F");		
 		
 		model.addAttribute("m1", m1);
 		model.addAttribute("m2", m2);
@@ -101,21 +131,31 @@ public class JspController {
 	public String jstlCore(Model model) {
 		Address addr1 = new Address(12345, "LA", "USA");
 		Address addr2 = new Address(67890, "NYC", "USA");
-		Member m1 = new Member(101, "James", addr1);
-		Member m2 = new Member(102, "Maria", addr2);	
-		Member m3 = new Member(103, "Hong", new Address(23456, "Seoul", "Korea"));
-		Member m4 = new Member(104, "kevin", new Address(13579, "Toronto", "Canada"));
+		Address addr3 = new Address(45335, "Seoul", "Korea");
+		Address addr4 = new Address(56462, "Seoul", "Korea");
+		Address addr5 = new Address(21455, "Paris", "France");
+		
+		Member m1 = new Member(101, "James", "james@gmail.com", addr1, "USA", "M");
+		Member m2 = new Member(102, "Maria", "maria@gmail.com", addr2, "USA", "F");	
+		Member m3 = new Member(103, "Hong", "hong@gmail.com", addr3, "Korea", "M");
+		Member m4 = new Member(104, "kevin", "kevin@gmail.com", addr4, "Korea", "M");
+		Member m5 = new Member(105, "Hamin", "hamin@gmail.com", addr5, "France", "M");
 		
 		model.addAttribute("m1", m1);
 		model.addAttribute("m2", m2);
+		model.addAttribute("m3", m3);
+		model.addAttribute("m4", m4);
+		model.addAttribute("m5", m5);
 		
-		Member[] members = {m1, m2};
+		Member[] members = {m1, m2, m3, m4, m5};
 		model.addAttribute("memberArray", members);
-		
 		List<Member> list = new ArrayList<>();
+		
 		list.add(m1);
 		list.add(m2);
 		list.add(m3);
+		list.add(m4);
+		list.add(m5);
 		model.addAttribute(list);
 		
 		return "jsp/jstl1_core";
@@ -147,6 +187,40 @@ public class JspController {
 		model.addAttribute("str3", "Catalina!");
 		
 		return "jsp/jstl3_fn";
+	}
+	
+	@GetMapping("/homework")
+	public String homework(Model model) {
+		Address addr1 = new Address(12345, "LA", "USA");
+		Address addr2 = new Address(67890, "NYC", "USA");
+		Address addr3 = new Address(45335, "Seoul", "Korea");
+		Address addr4 = new Address(56462, "Seoul", "Korea");
+		Address addr5 = new Address(21455, "Paris", "France");
+		
+		Member m1 = new Member(101, "James", "james@gmail.com", addr1, "USA", "M");
+		Member m2 = new Member(102, "Maria", "maria@gmail.com", addr2, "USA", "F");	
+		Member m3 = new Member(103, "Hong", "hong@gmail.com", addr3, "Korea", "M");
+		Member m4 = new Member(104, "kevin", "kevin@gmail.com", addr4, "Korea", "M");
+		Member m5 = new Member(105, "Hamin", "hamin@gmail.com", addr5, "France", "M");
+		
+		model.addAttribute("m1", m1);
+		model.addAttribute("m2", m2);
+		model.addAttribute("m3", m3);
+		model.addAttribute("m4", m4);
+		model.addAttribute("m5", m5);
+		
+		Member[] members = {m1, m2, m3, m4, m5};
+		model.addAttribute("memberArray", members);
+		List<Member> list = new ArrayList<>();
+		
+		list.add(m1);
+		list.add(m2);
+		list.add(m3);
+		list.add(m4);
+		list.add(m5);
+		model.addAttribute(list);
+		
+		return "jsp/homework";
 	}
 }
 
