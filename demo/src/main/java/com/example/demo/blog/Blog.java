@@ -42,7 +42,7 @@ public class Blog {
 	@Override
 	public String toString() {
 		return "Blog [bid=" + bid + ", penName=" + penName + ", title=" + title + ", content=" + content + ", modTime="
-				+ modTime.toString().replace("T"," ") + ", viewCount=" + viewCount + "]";
+				+ modTime.toString().substring(2, 16).replace("T"," ") + ", viewCount=" + viewCount + "]";
 	}
 
 	public int getBid() {
